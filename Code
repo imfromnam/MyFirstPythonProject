@@ -1,0 +1,55 @@
+# Personal Assistant CLI by Geraldo
+# Beginner Python Project
+
+import time
+
+# Ask for user's name (with validation)
+name = ""
+while len(name) == 0:
+    name = input("What is your name? ")
+
+# Ask for user's age
+age = int(input("How old are you? "))
+print("Hello 👋 " + name)
+print("You are", age, "years old.")
+
+# Age check logic
+if age == 50:
+    print("👴 Shi, you're old!")
+elif age >= 1 and age <= 17:
+    print("🧒 You're still a kid.")
+elif age >= 18 and age <= 49:
+    print("🧑 You're an adult.")
+else:
+    print("❌ Invalid age.")
+
+# Temperature check
+temp = int(input("What's today's temperature? "))
+if 8 <= temp <= 25:
+    print("✅ Good weather — go outside!")
+elif temp < 8:
+    print("🥶 Too cold, stay in!")
+else:
+    print("🔥 Very hot — jump in a pool!")
+
+# Countdown before next section
+print("⌛ Countdown:")
+for sec in range(5, 0, -1):
+    print(sec)
+    time.sleep(1)
+
+# Ask for a secret word to play with
+secret = input("Tell me a secret word: ")
+
+# String slicing on the secret word
+print("🔍 First 3 letters:", secret[0:3])
+print("🔁 Reversed:", secret[::-1])
+print("🧬 Every second letter:", secret[::2])
+
+# Fake website slicing demo
+website = "https://can.com"
+cut = slice(8, -4)
+print("🌐 Website slice result:", website[cut])  # prints 'can'
+
+# Say goodbye
+print("👋 Goodbye, " + name + "! See you soon.")
